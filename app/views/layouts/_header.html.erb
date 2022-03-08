@@ -1,0 +1,21 @@
+<%if user_signed_in? %>
+  <nav class ='nav d-flex a-center'>
+   <h1 class='class-header'>My Recipe App</h1>
+   <div class='link-cont d-flex a-center'>
+     <div class='nav-links d-flex a-center j-center'>
+       <h3><%= "Logged in: #{current_user.name} " %> </h3>
+       <%= link_to "Home", root_path %>
+       <%= link_to "Add new food", new_food_path %>
+       <%= link_to "Add new Recipe", new_recipy_path %>
+       <%= link_to "View My Recipe", recipies_path %>
+       <%= link_to "View Public Recipe", public_recipies_path %>
+     </div>
+     <%= button_to "Logout", destroy_user_session_path, :method => :delete %>
+   </div>
+  
+  </nav>
+  <%else%>
+    <nav class ='nav d-flex a-center'>
+       <h1 class='class-header'>My Recipe App</h1>
+    </nav>
+<%end%>

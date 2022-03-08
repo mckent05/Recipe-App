@@ -1,0 +1,2 @@
+module RecipiesFoodsHelper
+end

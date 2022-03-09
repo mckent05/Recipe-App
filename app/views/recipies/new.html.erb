@@ -1,0 +1,28 @@
+<h1>Page to add new recipe</h1>
+
+<%=form_with url: recipies_path, scope: :data do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name, :required=>true %>
+      </div>
+      <div>
+        <%= f.label :preparationtime  %>
+        <%= f.text_field :preparation_time, :required=>true %>
+      </div>
+       <div>
+        <%= f.label :cookingtime  %>
+        <%= f.text_field :cooking_time, :required=>true %>
+       </div>
+        <div>
+        <%= f.label :description  %>
+        <%= f.text_field :description, :required=>true %>
+      </div>
+    <div class="field">
+      <%= f.check_box :public %>
+      <%= f.label :public? %>
+    </div>
+    <div>
+         <%= f.submit "Create Recipe"%>
+    </div>
+      
+<% end %>

@@ -26,7 +26,7 @@ class RecipiesController < ApplicationController
 
     def show
       @recipe = Recipe.find([:id])
-      @food = @recipe.foods
+      @recipe_foods = @recipe.recipe_foods
     end
 
     def new

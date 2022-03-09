@@ -1,22 +1,11 @@
 class RecipiesController < ApplicationController
+  def index; end
 
-    def index
+  def create; end
 
-    end
+  def destroy; end
 
-    def create
+  def show; end
 
-    end
-
-    def destroy
-
-    end
-
-    def show
-    end
-
-    def new
-        
-    end
-
+  def new; end
 end

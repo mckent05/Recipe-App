@@ -1,5 +1,15 @@
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
 .d-flex {
   display: flex;
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .f-col {
@@ -12,4 +22,12 @@
 
 .j-center {
   justify-content: center;
+}
+
+.j-around {
+  justify-content: space-between;
+}
+
+.button {
+  justify-content: flex-end;
 }

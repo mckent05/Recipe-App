@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    food = current_user.food.new(post_params)
+    food = current_user.foods.new(post_params)
     respond_to do |format|
       format.html do
         if food.save

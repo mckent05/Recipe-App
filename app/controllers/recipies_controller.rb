@@ -1,6 +1,4 @@
 class RecipiesController < ApplicationController
-  
-
   def index
     @recipes = current_user.recipes
   end
@@ -43,6 +41,7 @@ class RecipiesController < ApplicationController
     params.require(:data).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 
+  def new; end
 end
 
 

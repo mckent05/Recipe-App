@@ -15,12 +15,11 @@ class RecipiesFoodsController < ApplicationController
   end
 
   def destroy
-   recipe_food = RecipeFood.find(params[:id])
-   recipe = recipe_food.recipe
-   recipe_food.destroy
-   redirect_to recipy_path(recipe.id)
-   flash[:success] = 'Ingredient Deleted'
-
+    recipe_food = RecipeFood.find(params[:id])
+    recipe = recipe_food.recipe
+    recipe_food.destroy
+    redirect_to recipy_path(recipe.id)
+    flash[:success] = 'Ingredient Deleted'
   end
 
   def new
@@ -30,5 +29,4 @@ class RecipiesFoodsController < ApplicationController
   def recipe_food_params
     params.require(:data).permit(:food_id, :quantity)
   end
-
 end

@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root "foods#index"
+  root "users#index"
 
   resources :users, only: %i[index]
   resources :foods, only: %i[index create destroy new]
   resources :recipies, only: %i[index create destroy new show] do
-      resources :recipies_foods, only: %i[create destroy, new]
+      resources :recipies_foods, only: %i[create destroy new]
   end
   resources :public_recipies, only: %i[index]
-  resources :general_shopping_list, only: %i[index]
+  resources :generate_shopping_list, only: %i[index]
 end

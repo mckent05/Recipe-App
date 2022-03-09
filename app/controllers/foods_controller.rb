@@ -13,7 +13,7 @@ class FoodsController < ApplicationController
       format.html do
         if food.save
           flash[:success] = 'Created New Food Succesfully!'
-          redirect_to food_path
+          redirect_to foods_path
         else
           render :new, alert: 'Error occured!'
         end
@@ -24,6 +24,12 @@ class FoodsController < ApplicationController
   def destroy
     food = Food.find(params[:id])
     food.destroy
-    redirect_to food_path
+    redirect_to foods_path
+  end
+
+  private
+
+  def post_params
+    params.require(:data).permit(:name, :measurement_unit, :price)
   end
 end

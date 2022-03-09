@@ -1,1 +1,29 @@
 <h1>Place to view my recipe</h1>
+
+<%if @recipes.empty?%>
+  <div>
+    <h1>You have no recipies. Please add a recipe <%= link_to "here", new_recipy_path%></h2>
+  </div>
+<%else%>
+  <div>
+  <div class="flash d-flex a-center j-center">
+    <% flash.each do |name, msg| %>
+      <p class=<%= name %>><%= msg %> </p>
+    <% end -%>
+  </div>
+  <%@recipes.each do |recipe|%>
+    <div>
+    <div>
+        <%= link_to "#{recipe.name}", recipy_path(recipe.id) %>
+        <%if can? :destroy, recipe %>
+              <%= button_to "Delete Recipe", recipy_path(recipe.id), :method => :delete %>
+        <%end%>
+    </div>
+    <div>
+        <p><%= recipe.description%></p>
+    </div>
+    <div>
+  <%end%>
+</div>
+<%end%>
+

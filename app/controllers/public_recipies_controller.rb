@@ -1,6 +1,6 @@
 class PublicRecipiesController < ApplicationController
 
-    def index
-        
-    end
+	def index
+		@public_recipies = Recipe.where(public: true)
+	end
 end

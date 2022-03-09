@@ -1,0 +1,19 @@
+<button class="button">
+      <%= link_to "Add Food", new_food_path %>
+  </button>
+<div class="food-container d-flex f-col">
+<div class="table-head d-flex">
+ <h3>Food</h3>
+ <h3>Measurement unit</h3>
+ <h3>Unit price</h3>
+ <h3>Actions</h3>
+</div>
+<% @food.each do |food|%>
+  <div class="table-data d-flex a-center">
+		<h3><%= food.name%></h3>
+		<h3><%= food.measurement_unit%></h3>
+		<h3><%= food.price%></h3>
+		<%= link_to "Delete", foods_path%>
+  </div>
+	<%end%>
+</div>

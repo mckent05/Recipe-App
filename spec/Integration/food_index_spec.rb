@@ -11,7 +11,7 @@ RSpec.describe 'food Index page', type: :feature do
         confirmed_at: Time.now
       )
 
-      users = User.all
+      @users = User.all
       Food.create(name: 'apple', measurement_unit: 'gram', price: '$4', user_id: 1)
       Food.create(name: 'apple', measurement_unit: 'gram', price: '$4', user_id: 1)
       visit new_user_session_path
@@ -24,7 +24,7 @@ RSpec.describe 'food Index page', type: :feature do
     end
 
     it 'Log In, check if it has name' do
-      users = User.all
+      @users = User.all
       foods = users[0].foods
       foods.each do |food|
         expect(page).to have_content(food.name)
@@ -32,7 +32,7 @@ RSpec.describe 'food Index page', type: :feature do
     end
 
     it 'Log In, check if it has measurement_unit' do
-      users = User.all
+      @users = User.all
       foods = users[0].foods
       foods.each do |food|
         expect(page).to have_content(food.measurement_unit)
@@ -40,7 +40,7 @@ RSpec.describe 'food Index page', type: :feature do
     end
 
     it 'Log In, check if it has price' do
-      users = User.all
+      @users = User.all
       foods = users[0].foods
       foods.each do |food|
         expect(page).to have_content(food.price)

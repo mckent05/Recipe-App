@@ -1,1 +1,22 @@
-<h1>Page to add new food</h1>
+<h1 class='new-post-header d-flex a-center j-center'>Create a new Post</h1>
+
+<%=form_with url: foods_path, scope: :data do |f| %>
+    <div>
+        <%= f.label :name, "Name:" %>
+        <%= f.text_field :name, required: true %>
+    </div>
+
+    <div>
+        <%= f.label :measurement_unit, "measurement_unit:" %>
+        <%= f.text_field :measurement_unit, required: true %>
+    </div>
+    <div>
+        <%= f.label :price, "price:" %>
+        <%= f.text_field :price, required: true %>
+    </div>
+
+    <div>
+        <%=f.submit "Submit"%>
+    </div>
+
+<% end %>

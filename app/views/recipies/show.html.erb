@@ -1,0 +1,53 @@
+<div>
+   <div class="flash d-flex a-center j-center">
+    <% flash.each do |name, msg| %>
+      <p class=<%= name %>><%= msg %> </p>
+    <% end -%>
+    </div>
+    <div>
+      <h1><%= @recipe.name %></h1>
+      <h2><span><%="Preparation Time: #{@recipe.preparation_time}"%></span> <span></span></h2>
+      <h2><%="Cooking Time: #{@recipe.cooking_time}"%></h2>
+      <p><%= @recipe.description %></p>
+      <div>
+        <%= link_to "Generate Shopping List", generate_shopping_list_index_path %>
+        <% if can? :create, @recipe%>
+            <%= link_to "Add new Ingredients", new_recipy_recipies_food_path(@recipe.id)%>
+        <%end%>
+      </div>
+    </div>
+    <%if @recipe_foods.empty?%>
+        <div>
+            <h1>No Ingredient added. Please add an Ingredient</h1>
+        </div>
+    <%else%>
+      <div>
+        <table>
+          <tr>
+            <th> Food </th>
+            <th> Quantity </th>
+            <th> Value </th>
+            <% if can? :delete, @recipe%>
+               <th> Actions </th>
+            <%end%>
+            
+          </tr>
+          <% @recipe_foods.each do |recipe_food| %>
+            <tr>
+                <td><%=recipe_food.food.name%></td>
+                <td><%= "#{recipe_food.quantity}#{recipe_food.food.measurement_unit}"%></td>
+                <td><%= "$#{recipe_food.food.price.to_i * recipe_food.quantity.to_i}"%></td>
+                <% if can? :delete, @recipe%>
+                    <td> 
+                      <%= button_to "Delete", recipy_recipies_food_path(@recipe.id, recipe_food.id), :method => :delete  %>
+                    </td>
+                 <%end%>
+            </tr>
+          <%end%>
+        </table>
+      </div>
+
+    <%end%>
+   
+
+</div>

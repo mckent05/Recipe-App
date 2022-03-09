@@ -1,6 +1,11 @@
 <h1>Place to view my recipe</h1>
 
-<div>
+<%if @recipes.empty?%>
+  <div>
+    <h1>You have no recipies. Please add a recipe <%= link_to "here", new_recipy_path%></h2>
+  </div>
+<%else%>
+  <div>
   <div class="flash d-flex a-center j-center">
     <% flash.each do |name, msg| %>
       <p class=<%= name %>><%= msg %> </p>
@@ -20,3 +25,5 @@
     <div>
   <%end%>
 </div>
+<%end%>
+

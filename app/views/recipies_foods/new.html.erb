@@ -1,0 +1,14 @@
+<%=form_with url: recipy_recipies_foods_path, scope: :data do |f| %>
+      <div>
+        <%= f.label :foodid %>
+         <%= f.select :food_id, @foods.collect { |food| [food.name, food.id] }, class: "full-width", placeholder: "Select ingredient", required: true %>
+      </div>
+      <div>
+        <%= f.label :quantity  %>
+        <%= f.number_field :quantity, :required=>true %>
+      </div>
+    <div>
+         <%= f.submit "Add Ingredient"%>
+    </div>
+      
+<% end %>

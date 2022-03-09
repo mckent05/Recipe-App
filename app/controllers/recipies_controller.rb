@@ -1,34 +1,22 @@
 class RecipiesController < ApplicationController
-  def index
-    @recipie = Recipe.all
-  end
 
-  def create
-    recipe = current_user.recipe.new(post_params)
-    respond_to do |format|
-      format.html do
-        if recipe.save
-          flash[:success] = 'Created New Recipe Succesfully!'
-          redirect_to recipe_path
-        else
-          render :new, alert: 'Error occured!'
-        end
-      end
+    def index
+
     end
-  end
 
-  def destroy
-    recipe = Recipe.find([:id])
-    recipe.destroy
-    redirect_to recipe_path
-  end
+    def create
 
-  def show
-    @recipe = Recipe.find([:id])
-    @recipe_foods = @recipe.recipe_foods
-  end
+    end
 
-  def new
-    @recipe = Recipe.new
-  end
+    def destroy
+
+    end
+
+    def show
+    end
+
+    def new
+        
+    end
+
 end

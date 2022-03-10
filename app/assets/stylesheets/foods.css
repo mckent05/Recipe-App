@@ -50,6 +50,7 @@
   cursor: pointer;
   font-size: 1rem;
 }
+
 .form-group {
   display: block;
   margin: 0.5rem auto;
@@ -82,7 +83,6 @@ label {
 .submit-button:hover {
   color: rgb(201, 195, 188);
   background: rgb(37, 37, 37);
-  color: #fff;
 }
 
 table {
@@ -95,7 +95,8 @@ table {
   background-color: rgb(179, 179, 179);
 }
 
-td, th {
+td,
+th {
   border-right: 2px black solid;
 }
 

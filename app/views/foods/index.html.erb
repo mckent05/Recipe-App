@@ -16,7 +16,11 @@
 	<td><h3><%= food.name%></h3></td>
 	<td><h3><%= food.measurement_unit%></h3></td>
 	<td><h3><%= food.price%></h3></td>
-	<td><%= button_to "Delete", food_path(food.id), method: :delete, class: "submit" %></td>
+	<% if can? :distroy, food %>
+     <%= button_to "Delete", food_path(food.id), method: :delete, class: "submit" %>
+  <% else %>
+    cannot delete
+ <% end %>
 	</tr>
 	<%end%>
 	</table>

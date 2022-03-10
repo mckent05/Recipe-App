@@ -1,7 +1,6 @@
-# Blog App
+# Recipe App
 
-The Blog app is a classic example of a blog website. Created a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
-
+The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 ## Built With
 - Ruby
 - Rails
@@ -14,7 +13,7 @@ To get a local copy of this project:
 
 Clone this repository or download the Zip folder:
 ```
-git clone https://github.com/Wes-Isaac/Blog-app.git
+git clone https://github.com/mckent05/Recipe-App.git
 ```
 
 To get started, In the root directory run:

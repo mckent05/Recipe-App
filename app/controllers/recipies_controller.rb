@@ -1,6 +1,6 @@
 class RecipiesController < ApplicationController
   def index
-    @recipes = current_user.recipes
+    @recipes = Recipe.all
   end
 
   def create

@@ -41,7 +41,7 @@ RSpec.describe 'User Index page', type: :feature do
     end
 
     it 'Log In, expect to see View My Recipe Link' do
-      click_link 'View My Recipe'
+      click_link 'View All Recipes'
       expect(page).to have_current_path recipies_path
     end
   end

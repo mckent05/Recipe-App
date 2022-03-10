@@ -21,7 +21,7 @@ RSpec.describe 'Recipe Index page', type: :feature do
       fill_in 'user_password', with: '123456'
       click_button 'Log in'
       visit root_path
-      click_on 'View My Recipe'
+      click_on 'View All Recipes'
       visit recipies_path
     end
 

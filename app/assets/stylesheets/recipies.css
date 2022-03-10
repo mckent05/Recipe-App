@@ -1,0 +1,142 @@
+.new-recipe-page textarea {
+  width: 40vw;
+  height: 15vh;
+  padding: 13px;
+}
+
+.recipe-index-page {
+  width: 100%;
+  height: 80vh;
+}
+.recipe-cont {
+  width: 90%;
+  row-gap: 20px;
+  margin: 0 auto;
+}
+
+.recipe-details-cont {
+  width: 100%;
+  margin: 15px auto;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px grey;
+  column-gap: 15px;
+}
+
+.recipe-name-delete {
+  width: 30%;
+  row-gap: 20px;
+  margin: 10px 0 0 20px;
+}
+
+.recipe-name-delete a {
+  font-size: 22px;
+  text-transform: capitalize;
+  color: black;
+}
+.recipe-name-delete button {
+  width: 35%;
+  padding: 8px;
+  outline: none;
+  border: none;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px black;
+  margin-bottom: 30px;
+}
+
+.description {
+  width: 60%;
+  height: 100%;
+  word-wrap: break-word;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.recipe-show-page {
+  width: 90vw;
+  row-gap: 30px;
+  margin: 0 auto;
+}
+
+.recipe-show-details {
+  width: 100%;
+  row-gap: 15px;
+  border-bottom: 1px solid grey;
+}
+
+.recipe-show-details h1 {
+  width: 100%;
+}
+
+.name-public {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.name-public-btn {
+  background-color: green;
+  width: 75px;
+  height: 20px;
+  border-radius: 20%;
+}
+
+.name-public-btn button {
+  position: absolute;
+  right: 5%;
+  width: 32.5px;
+  height: 20px;
+  border: none;
+  outline: none;
+  border-radius: 10%;
+  background-color: whitesmoke;
+}
+
+.p-contain {
+  column-gap: 20px;
+}
+
+.desc {
+  width: 50%;
+}
+.list-control {
+  width: 80%;
+  justify-content: space-between;
+  margin: 10px auto;
+  margin-bottom: 30px;
+}
+
+.list-control a {
+  width: 30%;
+  box-shadow: 0 4px 6px grey;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-weight: 500;
+}
+
+.recipe-show-table {
+  border: 2px solid black;
+  width: 70vw;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 10px;
+  width: 20%;
+  margin: 0 auto;
+}
+
+table button {
+  width: 50%;
+  background-color: red;
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}

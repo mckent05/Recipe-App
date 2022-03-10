@@ -13,7 +13,7 @@
 		<h3><%= food.name%></h3>
 		<h3><%= food.measurement_unit%></h3>
 		<h3><%= food.price%></h3>
-		<%= link_to "Delete", foods_path%>
+		<%= button_to "Delete", food_path(food.id), :method => :delete%>
   </div>
 	<%end%>
 </div>

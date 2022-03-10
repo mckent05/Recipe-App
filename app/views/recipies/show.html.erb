@@ -1,15 +1,26 @@
-<div>
+<div class='recipe-show-page d-flex f-col a-center j-center'>
    <div class="flash d-flex a-center j-center">
     <% flash.each do |name, msg| %>
       <p class=<%= name %>><%= msg %> </p>
     <% end -%>
     </div>
-    <div>
-      <h1><%= @recipe.name %></h1>
-      <h2><span><%="Preparation Time: #{@recipe.preparation_time}"%></span> <span></span></h2>
+    <div class='recipe-show-details d-flex f-col j-center'>
+      <h1 class='d-flex a-center j-center'><%= @recipe.name %></h1>
+      <div class='name-public d-flex a-center'>
+        <h2><span><%="Preparation Time: #{@recipe.preparation_time}"%></span> <span></span></h2>
+        <%if @recipe.public %>
+          <div class='p-contain d-flex a-center j-center'>
+            <h2>Public: </h2>
+            <div class='name-public-btn'>
+              <div class='div1'></div>
+                 <button class='div1-btn'></button>
+              </div>
+          </div>
+        <%end%>
+      </div>
       <h2><%="Cooking Time: #{@recipe.cooking_time}"%></h2>
-      <p><%= @recipe.description %></p>
-      <div>
+      <h2 class='desc'><%= "Description: #{@recipe.description}" %></h2>
+      <div class= 'list-control d-flex a-center'>
         <%= link_to "Generate Shopping List", generate_shopping_list_index_path %>
         <% if can? :create, @recipe%>
             <%= link_to "Add new Ingredients", new_recipy_recipies_food_path(@recipe.id)%>
@@ -17,12 +28,12 @@
       </div>
     </div>
     <%if @recipe_foods.empty?%>
-        <div>
+        <div class='recipe-show-none'>
             <h1>No Ingredient added. Please add an Ingredient</h1>
         </div>
     <%else%>
-      <div>
-        <table>
+      <div class='recipe-show-table'>
+        <table class='recipe-table'>
           <tr>
             <th> Food </th>
             <th> Quantity </th>
@@ -33,7 +44,7 @@
             
           </tr>
           <% @recipe_foods.each do |recipe_food| %>
-            <tr>
+            <tr class='tr'>
                 <td><%=recipe_food.food.name%></td>
                 <td><%= "#{recipe_food.quantity}#{recipe_food.food.measurement_unit}"%></td>
                 <td><%= "$#{recipe_food.food.price.to_i * recipe_food.quantity.to_i}"%></td>

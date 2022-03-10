@@ -1,0 +1,13 @@
+.user-cont {
+  width: 100vw;
+  height: 70vh;
+}
+
+.user-profile {
+  width: 50%;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px grey;
+  padding: 15px;
+  row-gap: 10px;
+}

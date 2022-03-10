@@ -1,19 +1,22 @@
 <%if @recipes.empty?%>
-  <div>
-    <h1>No Shopping List. Please Add Ingredients to Recipe</h1>
+  <div class='g-shop-list'>
+    <h1 class='d-flex a-center j-center'>No Shopping List. Please Add Ingredients to Recipe</h1>
   </div>
 <%else%>
-  <div>
+  <div class='g-shop-list-cont d-flex f-col a-center j-center'>
       <%@recipes.each do |recipe|%>
         <% recipe.recipe_foods.each { |recipe_food| @sum += recipe_food.quantity.to_i * recipe_food.food.price.to_i  }%>
       <%end%>
-     <div>
+     <div class='g-shop-header d-flex f-col a-center j-center'>
+        <h1 class='d-flex a-center j-center'>Shopping List</h1>
+        <span class='span a-center d-flex'>
         <%shopping_length = 0%>
-       <%@recipes.each { |recipe| shopping_length += recipe.recipe_foods.length}%>
-       <h1><%= "Amount of food items to buy: #{shopping_length}"%></h1>
-       <h2><%= "Total Value of food needed: #{@sum}"%></h2>
+         <%@recipes.each { |recipe| shopping_length += recipe.recipe_foods.length}%>
+         <h2><%= "Amount of food items to buy: #{shopping_length}"%></h2>
+         <h2><%= "Total Value of food needed: $#{@sum}"%></h2>
+        </span>
     </div>
-     <div>
+     <div class='recipe-show-table'>
         <table>
           <tr>
             <th> Food </th>

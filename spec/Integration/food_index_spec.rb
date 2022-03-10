@@ -19,7 +19,7 @@ RSpec.describe 'food Index page', type: :feature do
       fill_in 'user_password', with: '123456'
       click_button 'Log in'
       visit root_path
-      click_on 'View My Food'
+      click_on 'View Foods'
       visit foods_path
     end
 

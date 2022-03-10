@@ -1,0 +1,21 @@
+.g-shop-list-cont {
+  width: 90vw;
+  margin: 0 auto;
+  row-gap: 25px;
+}
+
+.g-shop-header {
+  width: 100%;
+  row-gap: 20px;
+}
+
+.g-shop-header h1 {
+  width: 100%;
+}
+
+.g-shop-header span {
+  width: 100%;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 12px;
+}

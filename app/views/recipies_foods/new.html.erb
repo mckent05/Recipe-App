@@ -1,14 +1,18 @@
-<%=form_with url: recipy_recipies_foods_path, scope: :data do |f| %>
-      <div>
-        <%= f.label :foodid %>
-         <%= f.select :food_id, @foods.collect { |food| [food.name, food.id] }, class: "full-width", placeholder: "Select ingredient", required: true %>
+<div class='login-page new-recipe-food-page d-flex a-center j-center f-col'>
+    <%=form_with url: recipy_recipies_foods_path, scope: :data do |f| %>
+      <div class="field d-flex a-center j-center f-col" >
+        <%= f.label :foodid, 'Food ID' %>
+         <%= f.select :food_id, @foods.collect { |food| [food.name, food.id] }, class: "full-width", :prompt => 'Select an Ingredient', :required=>true %>
       </div>
-      <div>
-        <%= f.label :quantity  %>
+      <div class="field d-flex a-center j-center f-col">
+        <%= f.label :quantity, 'Quantity'  %>
         <%= f.number_field :quantity, :required=>true %>
       </div>
-    <div>
+    <div class="actions d-flex a-center f-col">
          <%= f.submit "Add Ingredient"%>
     </div>
       
 <% end %>
+</div>
+
+

@@ -1,0 +1,25 @@
+
+<%if @public_recipes.empty? %>
+  <div class='recipe-index-page public-recipe-page d-flex a-center j-center'>
+    <h1>No Public recipes available<h1>
+  </div>
+<%else%>
+    <div  class='recipe-cont public-recipe d-flex f-col j-center a-center'>
+        <%@public_recipes.each do |public_recipe|%>
+       <% sum = 0%>
+       <%= link_to recipy_path(public_recipe.id) do %>
+         <div class='p-c d-flex a-center j-center'>
+            <div class ='recipe-name-delete public-recipe-name-delete d-flex j-center f-col' >
+              <h1><%= public_recipe.name %></h1>
+              <h2><%= "By #{public_recipe.user.name}"%></h2>
+            </div>
+            <div class='description public-recipe-food-desc d-flex f-col a-center j-center'>
+                <p><%="Total food items: #{public_recipe.recipe_foods.length}"%></p>
+                <%public_recipe.recipe_foods.each {|r_food| sum += r_food.quantity.to_i * r_food.food.price.to_i}%>
+                <p><%="Total Price $#{sum}"%></p>
+            </div>
+         </div>
+       <%end%>
+    <%end%>
+    </div>
+<%end%>

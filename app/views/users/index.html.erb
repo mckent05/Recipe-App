@@ -1,0 +1,9 @@
+<h1>view for user details</h1>
+
+<div class='user-cont d-flex j-center a-center'>
+ <div class='user-profile d-flex f-col a-center j-center'>
+    <h1><%=current_user.name%></h1>
+    <h2><%="No of Foods available: #{Food.all.length}"%></h2>
+    <h2><%="No of Recipies available: #{Recipe.all.length}"%></h2>
+ </div>
+</div>

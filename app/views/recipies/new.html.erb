@@ -1,0 +1,30 @@
+<div class='login-page new-recipe-page d-flex a-center j-center f-col'>
+  <%=form_with url: recipies_path, scope: :data do |f| %>
+      <div class="field d-flex a-center j-center f-col">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, :required=>true %>
+      </div>
+      <div class="field d-flex a-center j-center f-col">
+        <%= f.label :preparationtime, "Preparation Time"  %>
+        <%= f.text_field :preparation_time, :required=>true %>
+      </div>
+       <div class="field d-flex a-center j-center f-col">
+        <%= f.label :cookingtime, "Cooking Time"  %>
+        <%= f.text_field :cooking_time, :required=>true %>
+       </div>
+        <div class="field d-flex a-center j-center f-col">
+        <%= f.label :description, "Description" %>
+        <%= f.text_area :description, :required=>true %>
+      </div>
+    <div class="public d-flex a-center j-center">
+      <%= f.check_box :public %>
+      <%= f.label :public?, "Public?" %>
+    </div>
+    <div class="actions d-flex a-center f-col">
+         <%= f.submit "Create Recipe"%>
+    </div>  
+<% end %>
+
+</div>
+
+
